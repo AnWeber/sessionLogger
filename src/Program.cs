@@ -4,7 +4,7 @@ var host = Host.CreateDefaultBuilder(args)
     .ConfigureLogging((ctx, builder) =>
                   {
                     builder.AddConfiguration(ctx.Configuration.GetSection("Logging"));
-                    builder.AddFile(o => o.RootPath = ctx.HostingEnvironment.ContentRootPath);
+                    builder.AddFile(ctx.HostingEnvironment.ContentRootPath);
                   })
     .ConfigureServices(services =>
     {
